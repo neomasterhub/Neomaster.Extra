@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neomaster.Extra", "Neomaster.Extra\Neomaster.Extra.csproj", "{4DCA03D9-0707-480D-9EAB-9C8683645C0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DCA03D9-0707-480D-9EAB-9C8683645C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCA03D9-0707-480D-9EAB-9C8683645C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCA03D9-0707-480D-9EAB-9C8683645C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCA03D9-0707-480D-9EAB-9C8683645C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC3DB8EC-F008-43EB-A995-DAC3D7EE6C8F}
+	EndGlobalSection
+EndGlobal
