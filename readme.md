@@ -23,7 +23,7 @@ Test.E2.GetDescription() // "E2"
 
 <details>
 <summary>
-IEnumerable<byte>.<b>ConcatAsChars()</b> : string
+IEnumerable&lt;byte&gt;.<b>ConcatAsChars()</b> : string
 </summary>
 
 ```csharp
@@ -34,7 +34,7 @@ IEnumerable<byte>.<b>ConcatAsChars()</b> : string
 
 <details>
 <summary>
-IEnumerable<byte>.<b>ConcatAsUtf8Chars()</b> : string
+IEnumerable&lt;byte&gt;.<b>ConcatAsUtf8Chars()</b> : string
 </summary>
 
 ```csharp
