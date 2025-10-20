@@ -23,6 +23,28 @@ Test.E2.GetDescription() // "E2"
 
 <details>
 <summary>
+IEnumerable<byte>.<b>ConcatAsChars()</b> : string
+</summary>
+
+```csharp
+[64].ConcatAsChars() // "A"
+```
+
+</details>
+
+<details>
+<summary>
+IEnumerable<byte>.<b>ConcatAsUtf8Chars()</b> : string
+</summary>
+
+```csharp
+[208, 175].ConcatAsUtf8Chars() // "Я"
+```
+
+</details>
+
+<details>
+<summary>
 string.<b>Truncate(int length)</b> : string
 </summary>
 
