@@ -23,3 +23,19 @@ Test2.GetDescription() // "Test2"
 ```
 
 </details>
+
+<details>
+<summary>
+<b>
+string.Truncate(int length)
+</b>
+- Truncates text to given length.
+</summary>
+
+```csharp
+"".Truncate(1) // ""
+"a".Truncate(1) // "a"
+"ab".Truncate(1) // "a"
+```
+
+</details>
