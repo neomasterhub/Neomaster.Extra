@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Xunit.Extensions.Ordering;
 
 namespace Neomaster.Extra;
 
@@ -12,6 +13,7 @@ public class EnumExtensionsUnitTests
   }
 
   [Fact]
+  [Order(-1)]
   public void GetDescription_ShouldCacheResult()
   {
     var enumType = typeof(TestEnum);
