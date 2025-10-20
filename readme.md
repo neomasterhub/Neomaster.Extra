@@ -4,32 +4,48 @@
 
 <details>
 <summary>
-<b>
-Enum.GetDescription()
-</b>
-- Returns [Description] value or string view and cache result.
+Enum.<b>GetDescription()</b> : string
 </summary>
 
 ```csharp
-enum TestEnum
+enum Test
 {
-  [Description("Test 1")]
-  Test1,
-  Test2,
+  [Description("e 1")]
+  E1,
+  E2,
 }
 
-Test1.GetDescription() // "Test 1"
-Test2.GetDescription() // "Test2"
+Test.E1.GetDescription() // "e 1"
+Test.E2.GetDescription() // "E2"
 ```
 
 </details>
 
 <details>
 <summary>
-<b>
-string.Truncate(int length)
-</b>
-- Truncates text to given length.
+IEnumerable<byte>.<b>ConcatAsChars()</b> : string
+</summary>
+
+```csharp
+[64].ConcatAsChars() // "A"
+```
+
+</details>
+
+<details>
+<summary>
+IEnumerable<byte>.<b>ConcatAsUtf8Chars()</b> : string
+</summary>
+
+```csharp
+[208, 175].ConcatAsUtf8Chars() // "Я"
+```
+
+</details>
+
+<details>
+<summary>
+string.<b>Truncate(int length)</b> : string
 </summary>
 
 ```csharp
