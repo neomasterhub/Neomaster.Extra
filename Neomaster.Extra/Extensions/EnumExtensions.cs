@@ -9,7 +9,7 @@ public static class EnumExtensions
   public static readonly ConcurrentDictionary<Type, Dictionary<Enum, string>> EnumDescriptionCache = [];
 
   /// <summary>
-  /// Returns <see cref="DescriptionAttribute">[Description]</see> value or string view.
+  /// Returns <see cref="DescriptionAttribute">[Description]</see> value or string view and cache result.
   /// </summary>
   /// <param name="e">Enum element.</param>
   /// <returns><see cref="DescriptionAttribute">[Description]</see> value or string view.</returns>
