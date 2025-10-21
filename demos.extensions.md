@@ -13,11 +13,13 @@ MyEnum.E2.GetDescription() // "E2"
 
 IEnumerable&lt;byte&gt;.ConcatAsChars():string
 ```csharp
-[64].ConcatAsChars() // "A"
+[].ConcatAsChars() // ""
+[65].ConcatAsChars() // "A"
 ```
 
 IEnumerable&lt;byte&gt;.ConcatAsUtf8Chars():string
 ```csharp
+[].ConcatAsUtf8Chars() // ""
 [208, 175].ConcatAsUtf8Chars() // "Я"
 ```
 
@@ -26,4 +28,16 @@ string.Truncate(int length):string
 "".Truncate(1) // ""
 "a".Truncate(1) // "a"
 "ab".Truncate(1) // "a"
+```
+
+string.ToBytes():string
+```csharp
+"".ToBytes() // []
+"A".ToBytes() // [65]
+```
+
+string.ToUtf8Bytes():string
+```csharp
+"".ToUtf8Bytes() // []
+"Я".ToUtf8Bytes() // [208, 175]
 ```
