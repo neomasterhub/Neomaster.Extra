@@ -25,7 +25,8 @@ IEnumerable&lt;byte&gt;.<b>ConcatAsChars()</b> : string
 </summary>
 
 ```csharp
-[64].ConcatAsChars() // "A"
+[].ConcatAsChars() // ""
+[65].ConcatAsChars() // "A"
 ```
 </details>
 
@@ -35,7 +36,30 @@ IEnumerable&lt;byte&gt;.<b>ConcatAsUtf8Chars()</b> : string
 </summary>
 
 ```csharp
+[].ConcatAsUtf8Chars() // ""
 [208, 175].ConcatAsUtf8Chars() // "Я"
+```
+</details>
+
+<details>
+<summary>
+string.<b>ToBytes()</b> : string
+</summary>
+
+```csharp
+"".ToBytes() // []
+"A".ToBytes() // [65]
+```
+</details>
+
+<details>
+<summary>
+string.<b>ToUtf8Bytes()</b> : string
+</summary>
+
+```csharp
+"".ToUtf8Bytes() // []
+"Я".ToUtf8Bytes() // [208, 175]
 ```
 </details>
 
