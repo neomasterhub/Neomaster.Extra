@@ -43,6 +43,18 @@ IEnumerable&lt;byte&gt;.<b>ConcatAsUtf8Chars()</b> : string
 
 <details>
 <summary>
+IEnumerable&lt;TItem&gt;.<b>IsNullOrEmpty&lt;TItem&gt;()</b> : bool
+</summary>
+
+```csharp
+(null as byte[]).IsNullOrEmpty() // true
+[].IsNullOrEmpty() // true
+[1].IsNullOrEmpty() // false
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBytes()</b> : string
 </summary>
 
