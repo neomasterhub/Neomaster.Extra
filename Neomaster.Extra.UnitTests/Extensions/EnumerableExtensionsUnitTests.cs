@@ -4,6 +4,36 @@ namespace Neomaster.Extra.UnitTests;
 
 public class EnumerableExtensionsUnitTests
 {
+  [Fact]
+  public void IsNullOrEmpty_ShouldCheckNull()
+  {
+    byte[] src = null;
+
+    var actual = src.IsNullOrEmpty();
+
+    Assert.True(actual);
+  }
+
+  [Fact]
+  public void IsNullOrEmpty_ShouldCheckEmpty()
+  {
+    byte[] src = [];
+
+    var actual = src.IsNullOrEmpty();
+
+    Assert.True(actual);
+  }
+
+  [Fact]
+  public void IsNullOrEmpty_ShouldCheckNotEmpty()
+  {
+    byte[] src = [1];
+
+    var actual = src.IsNullOrEmpty();
+
+    Assert.False(actual);
+  }
+
   [Theory]
   [InlineData("")]
   [InlineData("lorem")]
