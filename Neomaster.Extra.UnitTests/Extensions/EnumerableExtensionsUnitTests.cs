@@ -58,4 +58,35 @@ public class EnumerableExtensionsUnitTests
 
     Assert.Equal(expected, actual);
   }
+
+  [Theory]
+  [InlineData(0)]
+  [InlineData(-1)]
+  public void SplitBySize_ShouldThrow_InvalidSize(int size)
+  {
+    Assert.Throws<ArgumentOutOfRangeException>(() => new byte[1].SplitBySize(size).ToArray());
+  }
+
+  [Fact]
+  public void SplitBySize_ShouldSplit_ValidSize()
+  {
+    byte[][] src =
+      [
+        [],
+        [1],
+        [1, 2],
+        [1, 2, 3],
+      ];
+    IEnumerable<List<byte>>[] expected =
+      [
+        [],
+        [[1]],
+        [[1, 2]],
+        [[1, 2], [3]],
+      ];
+
+    var actual = src.Select(x => x.SplitBySize(2));
+
+    Assert.All(actual, (a, i) => Assert.Equal(expected[i], a));
+  }
 }
