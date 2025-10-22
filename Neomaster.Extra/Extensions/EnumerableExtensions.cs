@@ -18,4 +18,26 @@ public static class EnumerableExtensions
   {
     return Encoding.UTF8.GetString(bytes.ToArray());
   }
+
+  public static IEnumerable<List<TItem>> SplitBySize<TItem>(this IEnumerable<TItem> items, int size)
+  {
+    if (size <= 0)
+    {
+      throw new ArgumentOutOfRangeException(nameof(size), "Size must be greater than 0");
+    }
+
+    using var enumerator = items.GetEnumerator();
+
+    while (enumerator.MoveNext())
+    {
+      var chunk = new List<TItem> { enumerator.Current };
+
+      for (var i = 1; i < size && enumerator.MoveNext(); i++)
+      {
+        chunk.Add(enumerator.Current);
+      }
+
+      yield return chunk;
+    }
+  }
 }
