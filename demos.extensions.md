@@ -11,6 +11,13 @@ MyEnum.E1.GetDescription() // "e 1"
 MyEnum.E2.GetDescription() // "E2"
 ```
 
+IEnumerable&lt;TItem&gt;.IsNullOrEmpty&lt;TItem&gt;():bool
+```csharp
+(null as byte[]).IsNullOrEmpty() // true
+[].IsNullOrEmpty() // true
+[1].IsNullOrEmpty() // false
+```
+
 IEnumerable&lt;byte&gt;.ConcatAsChars():string
 ```csharp
 [].ConcatAsChars() // ""
