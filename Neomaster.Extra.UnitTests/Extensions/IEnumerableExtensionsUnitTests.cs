@@ -60,6 +60,45 @@ public class IEnumerableExtensionsUnitTests
   }
 
   [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "12")]
+  public void ConcatToString(string itemsString, string expected)
+  {
+    var items = itemsString.Select(x => x.ToString());
+
+    var actual = items.ConcatToString();
+
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "1.2")]
+  public void JoinToString_ShouldJoin_CharSeparator(string itemsString, string expected)
+  {
+    var items = itemsString.Select(x => x.ToString());
+
+    var actual = items.JoinToString('.');
+
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "1..2")]
+  public void JoinToString_ShouldJoin_StringSeparator(string itemsString, string expected)
+  {
+    var items = itemsString.Select(x => x.ToString());
+
+    var actual = items.JoinToString("..");
+
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
   [InlineData(0)]
   [InlineData(-1)]
   public void SplitBySize_ShouldThrow_InvalidSize(int size)

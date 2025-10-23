@@ -19,6 +19,21 @@ public static class IEnumerableExtensions
     return Encoding.UTF8.GetString(bytes.ToArray());
   }
 
+  public static string ConcatToString<TItem>(this IEnumerable<TItem> items)
+  {
+    return string.Concat(items);
+  }
+
+  public static string JoinToString<TItem>(this IEnumerable<TItem> items, char separator)
+  {
+    return string.Join(separator, items);
+  }
+
+  public static string JoinToString<TItem>(this IEnumerable<TItem> items, string separator)
+  {
+    return string.Join(separator, items);
+  }
+
   public static IEnumerable<List<TItem>> SplitBySize<TItem>(this IEnumerable<TItem> items, int size)
   {
     if (size <= 0)
