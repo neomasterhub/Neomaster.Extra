@@ -106,6 +106,22 @@ IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List
 
 <details>
 <summary>
+string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
+</summary>
+
+```csharp
+"""
+{
+  "email": "1",
+  "color": "green"
+}
+"""
+.DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBytes()</b> : string
 </summary>
 

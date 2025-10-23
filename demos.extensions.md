@@ -1,3 +1,14 @@
+string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
+```csharp
+"""
+{
+  "email": "1",
+  "color": "green"
+}
+"""
+.DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
+```
+
 TObj.ToJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
 ```csharp
 new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
