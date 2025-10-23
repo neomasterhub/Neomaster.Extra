@@ -32,6 +32,7 @@ IEnumerable&lt;byte&gt;.ConcatAsUtf8Chars():string
 
 IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;():IEnumerable&lt;List&lt;TItem&gt;&gt;
 ```csharp
+[].SplitBySize(-1) // ArgumentOutOfRangeException
 [].SplitBySize(0) // ArgumentOutOfRangeException
 [].SplitBySize(2) // []
 [1].SplitBySize(2) // [[1]]

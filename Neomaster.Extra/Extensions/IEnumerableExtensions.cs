@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Neomaster.Extra;
 
-public static class EnumerableExtensions
+public static class IEnumerableExtensions
 {
   public static bool IsNullOrEmpty<TItem>(this IEnumerable<TItem> items)
   {

@@ -59,6 +59,7 @@ IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List
 </summary>
 
 ```csharp
+[].SplitBySize(-1) // ArgumentOutOfRangeException
 [].SplitBySize(0) // ArgumentOutOfRangeException
 [].SplitBySize(2) // []
 [1].SplitBySize(2) // [[1]]

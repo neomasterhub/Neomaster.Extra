@@ -2,7 +2,7 @@ using System.Text;
 
 namespace Neomaster.Extra.UnitTests;
 
-public class EnumerableExtensionsUnitTests
+public class IEnumerableExtensionsUnitTests
 {
   [Fact]
   public void IsNullOrEmpty_ShouldCheckNull()
@@ -87,6 +87,7 @@ public class EnumerableExtensionsUnitTests
 
     var actual = src.Select(x => x.SplitBySize(2));
 
+    Assert.True(actual.Any());
     Assert.All(actual, (a, i) => Assert.Equal(expected[i], a));
   }
 }
