@@ -38,4 +38,15 @@ public class StringExtensionsUnitTests
 
     Assert.Equal(expected, actual);
   }
+
+  [Fact]
+  public void DeserializeAsJson()
+  {
+    var expected = new TestUser { Email = "1", Color = ConsoleColor.Green };
+    var json = expected.ToJson();
+
+    var actual = json.DeserializeAsJson<TestUser>();
+
+    Assert.Equal(expected, actual);
+  }
 }

@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json;
 
 namespace Neomaster.Extra;
 
@@ -17,5 +18,10 @@ public static class StringExtensions
   public static byte[] ToUtf8Bytes(this string text)
   {
     return Encoding.UTF8.GetBytes(text);
+  }
+
+  public static TObj DeserializeAsJson<TObj>(this string json, JsonSerializerOptions options = null)
+  {
+    return JsonSerializer.Deserialize<TObj>(json, options ?? ExtraConsts.JsonSerializerOptionsList.Default);
   }
 }
