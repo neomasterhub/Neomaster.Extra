@@ -59,34 +59,43 @@ public class IEnumerableExtensionsUnitTests
     Assert.Equal(expected, actual);
   }
 
-  [Fact]
-  public void ConcatToString()
+  [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "12")]
+  public void ConcatToString(string itemsString, string expected)
   {
-    var src = new char[] { '1', '2' };
+    var items = itemsString.Select(x => x.ToString());
 
-    var actual = src.ConcatToString();
+    var actual = items.ConcatToString();
 
-    Assert.Equal("12", actual);
+    Assert.Equal(expected, actual);
   }
 
-  [Fact]
-  public void JoinToString_ShouldJoin_CharSeparator()
+  [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "1.2")]
+  public void JoinToString_ShouldJoin_CharSeparator(string itemsString, string expected)
   {
-    var src = new char[] { '1', '2' };
+    var items = itemsString.Select(x => x.ToString());
 
-    var actual = src.JoinToString('.');
+    var actual = items.JoinToString('.');
 
-    Assert.Equal("1.2", actual);
+    Assert.Equal(expected, actual);
   }
 
-  [Fact]
-  public void JoinToString_ShouldJoin_StringSeparator()
+  [Theory]
+  [InlineData("", "")]
+  [InlineData("1", "1")]
+  [InlineData("12", "1..2")]
+  public void JoinToString_ShouldJoin_StringSeparator(string itemsString, string expected)
   {
-    var src = new char[] { '1', '2' };
+    var items = itemsString.Select(x => x.ToString());
 
-    var actual = src.JoinToString("..");
+    var actual = items.JoinToString("..");
 
-    Assert.Equal("1..2", actual);
+    Assert.Equal(expected, actual);
   }
 
   [Theory]
