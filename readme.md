@@ -55,6 +55,21 @@ IEnumerable&lt;TItem&gt;.<b>IsNullOrEmpty&lt;TItem&gt;()</b> : bool
 
 <details>
 <summary>
+IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List&lt;TItem&gt;&gt;
+</summary>
+
+```csharp
+[].SplitBySize(-1) // ArgumentOutOfRangeException
+[].SplitBySize(0) // ArgumentOutOfRangeException
+[].SplitBySize(2) // []
+[1].SplitBySize(2) // [[1]]
+[1, 2].SplitBySize(2) // [[1, 2]]
+[1, 2, 3].SplitBySize(2) // [[1, 2], [3]]
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBytes()</b> : string
 </summary>
 
