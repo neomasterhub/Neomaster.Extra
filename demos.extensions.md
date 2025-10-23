@@ -30,6 +30,27 @@ IEnumerable&lt;byte&gt;.ConcatAsUtf8Chars():string
 [208, 175].ConcatAsUtf8Chars() // "Я"
 ```
 
+IEnumerable&lt;TItem&gt;.ConcatToString&lt;TItem&gt;():string
+```csharp
+[].ConcatToString() // ""
+['1'].ConcatToString() // "1"
+['1', '2'].ConcatToString() // "12"
+```
+
+IEnumerable&lt;TItem&gt;.JoinToString&lt;TItem&gt;(char separator):string
+```csharp
+[].JoinToString('.') // ""
+['1'].JoinToString('.') // "1"
+['1', '2'].JoinToString('.') // "1.2"
+```
+
+IEnumerable&lt;TItem&gt;.JoinToString&lt;TItem&gt;(string separator):string
+```csharp
+[].JoinToString("..") // ""
+['1'].JoinToString("..") // "1"
+['1', '2'].JoinToString("..") // "1..2"
+```
+
 IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;():IEnumerable&lt;List&lt;TItem&gt;&gt;
 ```csharp
 [].SplitBySize(-1) // ArgumentOutOfRangeException
