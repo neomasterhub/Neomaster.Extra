@@ -59,6 +59,36 @@ public class IEnumerableExtensionsUnitTests
     Assert.Equal(expected, actual);
   }
 
+  [Fact]
+  public void ConcatToString()
+  {
+    var src = new char[] { '1', '2' };
+
+    var actual = src.ConcatToString();
+
+    Assert.Equal("12", actual);
+  }
+
+  [Fact]
+  public void JoinToString_ShouldJoin_CharSeparator()
+  {
+    var src = new char[] { '1', '2' };
+
+    var actual = src.JoinToString('.');
+
+    Assert.Equal("1.2", actual);
+  }
+
+  [Fact]
+  public void JoinToString_ShouldJoin_StringSeparator()
+  {
+    var src = new char[] { '1', '2' };
+
+    var actual = src.JoinToString("..");
+
+    Assert.Equal("1..2", actual);
+  }
+
   [Theory]
   [InlineData(0)]
   [InlineData(-1)]
