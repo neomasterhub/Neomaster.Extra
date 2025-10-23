@@ -106,6 +106,22 @@ IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List
 
 <details>
 <summary>
+string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
+</summary>
+
+```csharp
+"""
+{
+  "email": "1",
+  "color": "green"
+}
+"""
+.DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBytes()</b> : string
 </summary>
 
@@ -135,5 +151,28 @@ string.<b>Truncate(int length)</b> : string
 "".Truncate(1) // ""
 "a".Truncate(1) // "a"
 "ab".Truncate(1) // "a"
+```
+</details>
+
+<details>
+<summary>
+TObj.<b>ToJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
+</summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
+```
+</details>
+
+<details>
+<summary>
+TObj.<b>ToJsonPretty&lt;TObj&gt;()</b> : string
+</summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJsonPretty()
+// {
+//   "a":"red"
+// }
 ```
 </details>
