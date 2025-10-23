@@ -1,3 +1,16 @@
+TObj.ToJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
+```csharp
+new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
+```
+
+TObj.ToJsonPretty&lt;TObj&gt;():string
+```csharp
+new { A = ConsoleColor.Red }.ToJsonPretty()
+// {
+//   "a":"red"
+// }
+```
+
 Enum.GetDescription():string
 ```csharp
 enum MyEnum

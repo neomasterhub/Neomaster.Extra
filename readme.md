@@ -137,3 +137,26 @@ string.<b>Truncate(int length)</b> : string
 "ab".Truncate(1) // "a"
 ```
 </details>
+
+<details>
+<summary>
+TObj.<b>ToJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
+</summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
+```
+</details>
+
+<details>
+<summary>
+TObj.<b>ToJsonPretty&lt;TObj&gt;()</b> : string
+</summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJsonPretty()
+// {
+//   "a":"red"
+// }
+```
+</details>
