@@ -8,14 +8,16 @@ const string solDir = @"..\..\..\..";
 var readmeTemplatePath = Path.Combine(solDir, "readme.template.md");
 var readmeTemplateText = File.ReadAllText(readmeTemplatePath);
 var readmePath = Path.Combine(solDir, "readme.md");
+var demosExtensionsPath = Path.Combine(solDir, "demos.extensions.md");
 var demosExtensionsSB = new StringBuilder();
+var readmeExtensionsSB = new StringBuilder();
 
 foreach (var x in File
-  .ReadAllText(Path.Combine(solDir, "demos.extensions.md"))
+  .ReadAllText(demosExtensionsPath)
   .Split(codeCket + Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
   .Select(x =>
   {
-    var pair = x.Split(codeBra);
+    var pair = x.Split(codeBra, StringSplitOptions.RemoveEmptyEntries);
 
     return new
     {
@@ -26,6 +28,13 @@ foreach (var x in File
   .OrderBy(x => x.Header))
 {
   demosExtensionsSB
+    .AppendLine()
+    .AppendLine(x.Header)
+    .AppendLine(codeBra)
+    .AppendLine(x.Code)
+    .AppendLine(codeCket);
+
+  readmeExtensionsSB
     .AppendLine()
     .AppendLine("<details>")
     .AppendLine("<summary>")
@@ -42,6 +51,7 @@ foreach (var x in File
 }
 
 var readmeText = readmeTemplateText
-  .Replace("{extensions}", demosExtensionsSB.ToString().Trim());
+  .Replace("{extensions}", readmeExtensionsSB.ToString().Trim());
 
+File.WriteAllText(demosExtensionsPath, demosExtensionsSB.ToString());
 File.WriteAllText(readmePath, readmeText);
