@@ -6,6 +6,8 @@ namespace Neomaster.Extra;
 
 public static class ExtraConsts
 {
+  public static readonly char[] UrlUnsafeChars = ['+', '/', '='];
+
   public static class JsonSerializerOptionsList
   {
     public static readonly JsonSerializerOptions Default = new()
