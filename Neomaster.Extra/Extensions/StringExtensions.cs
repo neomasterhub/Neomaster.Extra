@@ -69,8 +69,9 @@ public static class StringExtensions
   public static string FromUrlSafeBase64(this string urlSafeBase64)
   {
     return urlSafeBase64
-      .PadRight(4 - (urlSafeBase64.Length % 4), '=')
+      .PadRight(urlSafeBase64.Length + (urlSafeBase64.Length % 4), '=')
       .Replace('-', '+')
-      .Replace('_', '/');
+      .Replace('_', '/')
+      .FromBase64();
   }
 }

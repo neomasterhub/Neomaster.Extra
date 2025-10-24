@@ -5,6 +5,16 @@ namespace Neomaster.Extra.UnitTests;
 
 public class StringExtensionsUnitTests
 {
+  private const string _urlUnsafeBase64Src = "ÿÿы😊";
+
+  public StringExtensionsUnitTests()
+  {
+    var urlUnsafeBase64 = _urlUnsafeBase64Src.ToBase64();
+    Assert.All(
+      ExtraConsts.UrlUnsafeChars,
+      uc => Assert.Contains(uc, urlUnsafeBase64));
+  }
+
   [Theory]
   [InlineData("", true)]
   [InlineData(" ", true)]
@@ -133,5 +143,25 @@ public class StringExtensionsUnitTests
     var actual = base64.FromBase64();
 
     Assert.Equal(expected, actual);
+  }
+
+  [Fact]
+  public void ToUrlSafeBase64()
+  {
+    var actual = _urlUnsafeBase64Src.ToUrlSafeBase64();
+
+    Assert.All(
+      ExtraConsts.UrlUnsafeChars,
+      uc => Assert.DoesNotContain(uc, actual));
+  }
+
+  [Fact]
+  public void FromUrlSafeBase64()
+  {
+    var urlSafeBase64 = _urlUnsafeBase64Src.ToUrlSafeBase64();
+
+    var actual = urlSafeBase64.FromUrlSafeBase64();
+
+    Assert.Equal(_urlUnsafeBase64Src, actual);
   }
 }
