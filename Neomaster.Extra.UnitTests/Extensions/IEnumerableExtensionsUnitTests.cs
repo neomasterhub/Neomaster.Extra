@@ -154,4 +154,29 @@ public class IEnumerableExtensionsUnitTests
 
     Assert.False(actual);
   }
+
+  [Fact]
+  public void ToBase64()
+  {
+    var bytes = new byte[100];
+    RandomNumberGenerator.Fill(bytes);
+    var input = bytes.ConcatAsUtf8Chars();
+
+    var actual = input.ToBase64();
+
+    Assert.True(actual.IsBase64());
+  }
+
+  [Fact]
+  public void FromBase64()
+  {
+    var bytes = new byte[100];
+    RandomNumberGenerator.Fill(bytes);
+    var expected = bytes.ConcatAsUtf8Chars();
+    var base64 = expected.ToBase64();
+
+    var actual = base64.FromBase64();
+
+    Assert.Equal(expected, actual);
+  }
 }
