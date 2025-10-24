@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Neomaster.Extra.UnitTests;
@@ -128,5 +129,29 @@ public class IEnumerableExtensionsUnitTests
 
     Assert.True(actual.Any());
     Assert.All(actual, (a, i) => Assert.Equal(expected[i], a));
+  }
+
+  [Fact]
+  public void IsBase64_ShouldCheckBase64()
+  {
+    var bytes = new byte[100];
+    RandomNumberGenerator.Fill(bytes);
+    var base64 = Convert.ToBase64String(bytes);
+
+    var actual = base64.IsBase64();
+
+    Assert.True(actual);
+  }
+
+  [Theory]
+  [InlineData(null)]
+  [InlineData("")]
+  [InlineData(" ")]
+  [InlineData("x")]
+  public void IsBase64_ShouldCheckNotBase64(string input)
+  {
+    var actual = input.IsBase64();
+
+    Assert.False(actual);
   }
 }
