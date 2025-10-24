@@ -56,4 +56,22 @@ public static class StringExtensions
       && text.Length % 4 == 0
       && Convert.TryFromBase64String(text, new byte[text.Length], out var _);
   }
+
+  public static string ToUrlSafeBase64(this string text)
+  {
+    return text
+      .ToBase64()
+      .Replace('+', '-')
+      .Replace('/', '_')
+      .TrimEnd('=');
+  }
+
+  public static string FromUrlSafeBase64(this string urlSafeBase64)
+  {
+    return urlSafeBase64
+      .PadRight(urlSafeBase64.Length + (urlSafeBase64.Length % 4), '=')
+      .Replace('-', '+')
+      .Replace('_', '/')
+      .FromBase64();
+  }
 }
