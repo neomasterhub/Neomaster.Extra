@@ -194,6 +194,26 @@ string.<b>IsWhiteSpace()</b> : bool
 
 <details>
 <summary>
+string.<b>RemoveByRegex()</b> : string
+</summary>
+
+```csharp
+"x1y".RemoveByRegex(@"\d") // "xy"
+```
+</details>
+
+<details>
+<summary>
+string.<b>ReplaceByRegex()</b> : string
+</summary>
+
+```csharp
+"x1y".ReplaceByRegex(@"\d", "2") // "x2y"
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBase64()</b> : string
 </summary>
 
