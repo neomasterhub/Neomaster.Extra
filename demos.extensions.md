@@ -115,6 +115,16 @@ string.IsWhiteSpace():bool
 (null as string).IsWhiteSpace() // false
 ```
 
+string.RemoveByRegex():string
+```csharp
+"x1y".RemoveByRegex(@"\d") // "xy"
+```
+
+string.ReplaceByRegex():string
+```csharp
+"x1y".ReplaceByRegex(@"\d", "2") // "x2y"
+```
+
 string.ToBase64():string
 ```csharp
 "1".ToBase64() // "MQ=="
