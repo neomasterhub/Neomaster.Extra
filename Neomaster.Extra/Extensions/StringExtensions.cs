@@ -65,4 +65,12 @@ public static class StringExtensions
       .Replace('/', '_')
       .TrimEnd('=');
   }
+
+  public static string FromUrlSafeBase64(this string urlSafeBase64)
+  {
+    return urlSafeBase64
+      .PadRight(4 - (urlSafeBase64.Length % 4), '=')
+      .Replace('-', '+')
+      .Replace('_', '/');
+  }
 }
