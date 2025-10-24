@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Neomaster.Extra;
 
@@ -73,5 +74,22 @@ public static class StringExtensions
       .Replace('-', '+')
       .Replace('_', '/')
       .FromBase64();
+  }
+
+  public static string ReplaceByRegex(
+    this string text,
+    string pattern,
+    string replacement,
+    RegexOptions options = RegexOptions.None)
+  {
+    return Regex.Replace(text, pattern, replacement, options);
+  }
+
+  public static string RemoveByRegex(
+    this string text,
+    string pattern,
+    RegexOptions options = RegexOptions.None)
+  {
+    return Regex.Replace(text, pattern, string.Empty, options);
   }
 }
