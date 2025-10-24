@@ -164,4 +164,18 @@ public class StringExtensionsUnitTests
 
     Assert.Equal(_urlUnsafeBase64Src, actual);
   }
+
+  [Fact]
+  public void ReplaceByRegex()
+  {
+    var actual = "x1y".ReplaceByRegex(@"\d", "2");
+    Assert.Equal("x2y", actual);
+  }
+
+  [Fact]
+  public void RemoveByRegex()
+  {
+    var actual = "x1y".RemoveByRegex(@"\d");
+    Assert.Equal("xy", actual);
+  }
 }
