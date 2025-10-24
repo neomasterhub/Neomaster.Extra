@@ -122,6 +122,47 @@ string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b
 
 <details>
 <summary>
+string.<b>IsNullOrEmpty()</b> : bool
+</summary>
+
+```csharp
+(null as string).IsNullOrEmpty() // true
+"".IsNullOrEmpty() // true
+" ".IsNullOrEmpty() // false
+"a".IsNullOrEmpty() // false
+```
+</details>
+
+<details>
+<summary>
+string.<b>IsNullOrWhiteSpace()</b> : bool
+</summary>
+
+```csharp
+(null as string).IsNullOrWhiteSpace() // true
+"".IsNullOrWhiteSpace() // true
+" ".IsNullOrWhiteSpace() // true
+"\t".IsNullOrWhiteSpace() // true
+"a".IsNullOrWhiteSpace() // false
+```
+</details>
+
+<details>
+<summary>
+string.<b>IsWhiteSpace()</b> : bool
+</summary>
+
+```csharp
+"".IsWhiteSpace() // true
+" ".IsWhiteSpace() // true
+"\t".IsWhiteSpace() // true
+"a".IsWhiteSpace() // false
+(null as string).IsWhiteSpace() // false
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBytes()</b> : string
 </summary>
 
