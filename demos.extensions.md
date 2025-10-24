@@ -73,6 +73,17 @@ string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):strin
 .DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
 ```
 
+string.FromBase64():string
+```csharp
+"MQ==".FromBase64() // "1"
+```
+
+string.IsBase64():bool
+```csharp
+"1".IsBase64() // false
+"MQ==".IsBase64() // true
+```
+
 string.IsNullOrEmpty():bool
 ```csharp
 (null as string).IsNullOrEmpty() // true
@@ -97,6 +108,11 @@ string.IsWhiteSpace():bool
 "\t".IsWhiteSpace() // true
 "a".IsWhiteSpace() // false
 (null as string).IsWhiteSpace() // false
+```
+
+string.ToBase64():string
+```csharp
+"1".ToBase64() // "MQ=="
 ```
 
 string.ToBytes():string

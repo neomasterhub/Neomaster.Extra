@@ -122,6 +122,27 @@ string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b
 
 <details>
 <summary>
+string.<b>FromBase64()</b> : string
+</summary>
+
+```csharp
+"MQ==".FromBase64() // "1"
+```
+</details>
+
+<details>
+<summary>
+string.<b>IsBase64()</b> : bool
+</summary>
+
+```csharp
+"1".IsBase64() // false
+"MQ==".IsBase64() // true
+```
+</details>
+
+<details>
+<summary>
 string.<b>IsNullOrEmpty()</b> : bool
 </summary>
 
@@ -158,6 +179,16 @@ string.<b>IsWhiteSpace()</b> : bool
 "\t".IsWhiteSpace() // true
 "a".IsWhiteSpace() // false
 (null as string).IsWhiteSpace() // false
+```
+</details>
+
+<details>
+<summary>
+string.<b>ToBase64()</b> : string
+</summary>
+
+```csharp
+"1".ToBase64() // "MQ=="
 ```
 </details>
 
