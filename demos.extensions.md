@@ -1,52 +1,3 @@
-string.IsWhiteSpace():bool
-```csharp
-"".IsWhiteSpace() // true
-" ".IsWhiteSpace() // true
-"\t".IsWhiteSpace() // true
-"a".IsWhiteSpace() // false
-(null as string).IsWhiteSpace() // false
-```
-
-string.IsNullOrEmpty():bool
-```csharp
-(null as string).IsNullOrEmpty() // true
-"".IsNullOrEmpty() // true
-" ".IsNullOrEmpty() // false
-"a".IsNullOrEmpty() // false
-```
-
-string.IsNullOrWhiteSpace():bool
-```csharp
-(null as string).IsNullOrWhiteSpace() // true
-"".IsNullOrWhiteSpace() // true
-" ".IsNullOrWhiteSpace() // true
-"\t".IsNullOrWhiteSpace() // true
-"a".IsNullOrWhiteSpace() // false
-```
-
-string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
-```csharp
-"""
-{
-  "email": "1",
-  "color": "green"
-}
-"""
-.DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
-```
-
-TObj.ToJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
-```csharp
-new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
-```
-
-TObj.ToJsonPretty&lt;TObj&gt;():string
-```csharp
-new { A = ConsoleColor.Red }.ToJsonPretty()
-// {
-//   "a":"red"
-// }
-```
 
 Enum.GetDescription():string
 ```csharp
@@ -59,13 +10,6 @@ enum MyEnum
 
 MyEnum.E1.GetDescription() // "e 1"
 MyEnum.E2.GetDescription() // "E2"
-```
-
-IEnumerable&lt;TItem&gt;.IsNullOrEmpty&lt;TItem&gt;():bool
-```csharp
-(null as byte[]).IsNullOrEmpty() // true
-[].IsNullOrEmpty() // true
-[1].IsNullOrEmpty() // false
 ```
 
 IEnumerable&lt;byte&gt;.ConcatAsChars():string
@@ -85,6 +29,13 @@ IEnumerable&lt;TItem&gt;.ConcatToString&lt;TItem&gt;():string
 [].ConcatToString() // ""
 ['1'].ConcatToString() // "1"
 ['1', '2'].ConcatToString() // "12"
+```
+
+IEnumerable&lt;TItem&gt;.IsNullOrEmpty&lt;TItem&gt;():bool
+```csharp
+(null as byte[]).IsNullOrEmpty() // true
+[].IsNullOrEmpty() // true
+[1].IsNullOrEmpty() // false
 ```
 
 IEnumerable&lt;TItem&gt;.JoinToString&lt;TItem&gt;(char separator):string
@@ -111,11 +62,41 @@ IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;():IEnumerable&lt;List&lt;TItem
 [1, 2, 3].SplitBySize(2) // [[1, 2], [3]]
 ```
 
-string.Truncate(int length):string
+string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
 ```csharp
-"".Truncate(1) // ""
-"a".Truncate(1) // "a"
-"ab".Truncate(1) // "a"
+"""
+{
+  "email": "1",
+  "color": "green"
+}
+"""
+.DeserializeAsJson<TestUser>() // new TestUser { Email = "1", Color = ConsoleColor.Green }
+```
+
+string.IsNullOrEmpty():bool
+```csharp
+(null as string).IsNullOrEmpty() // true
+"".IsNullOrEmpty() // true
+" ".IsNullOrEmpty() // false
+"a".IsNullOrEmpty() // false
+```
+
+string.IsNullOrWhiteSpace():bool
+```csharp
+(null as string).IsNullOrWhiteSpace() // true
+"".IsNullOrWhiteSpace() // true
+" ".IsNullOrWhiteSpace() // true
+"\t".IsNullOrWhiteSpace() // true
+"a".IsNullOrWhiteSpace() // false
+```
+
+string.IsWhiteSpace():bool
+```csharp
+"".IsWhiteSpace() // true
+" ".IsWhiteSpace() // true
+"\t".IsWhiteSpace() // true
+"a".IsWhiteSpace() // false
+(null as string).IsWhiteSpace() // false
 ```
 
 string.ToBytes():string
@@ -128,4 +109,24 @@ string.ToUtf8Bytes():string
 ```csharp
 "".ToUtf8Bytes() // []
 "Я".ToUtf8Bytes() // [208, 175]
+```
+
+string.Truncate(int length):string
+```csharp
+"".Truncate(1) // ""
+"a".Truncate(1) // "a"
+"ab".Truncate(1) // "a"
+```
+
+TObj.ToJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
+```csharp
+new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
+```
+
+TObj.ToJsonPretty&lt;TObj&gt;():string
+```csharp
+new { A = ConsoleColor.Red }.ToJsonPretty()
+// {
+//   "a":"red"
+// }
 ```
