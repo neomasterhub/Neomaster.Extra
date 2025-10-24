@@ -39,4 +39,14 @@ public static class StringExtensions
   {
     return JsonSerializer.Deserialize<TObj>(json, options ?? ExtraConsts.JsonSerializerOptionsList.Default);
   }
+
+  public static string ToBase64(this string text)
+  {
+    return Convert.ToBase64String(text.ToUtf8Bytes());
+  }
+
+  public static string FromBase64(this string base64)
+  {
+    return Convert.FromBase64String(base64).ConcatAsUtf8Chars();
+  }
 }
