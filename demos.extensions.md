@@ -1,3 +1,29 @@
+string.IsWhiteSpace():bool
+```csharp
+"".IsWhiteSpace() // true
+" ".IsWhiteSpace() // true
+"\t".IsWhiteSpace() // true
+"a".IsWhiteSpace() // false
+(null as string).IsWhiteSpace() // false
+```
+
+string.IsNullOrEmpty():bool
+```csharp
+(null as string).IsNullOrEmpty() // true
+"".IsNullOrEmpty() // true
+" ".IsNullOrEmpty() // false
+"a".IsNullOrEmpty() // false
+```
+
+string.IsNullOrWhiteSpace():bool
+```csharp
+(null as string).IsNullOrWhiteSpace() // true
+"".IsNullOrWhiteSpace() // true
+" ".IsNullOrWhiteSpace() // true
+"\t".IsNullOrWhiteSpace() // true
+"a".IsNullOrWhiteSpace() // false
+```
+
 string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
 ```csharp
 """

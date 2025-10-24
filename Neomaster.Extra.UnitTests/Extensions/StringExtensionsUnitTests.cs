@@ -5,6 +5,41 @@ namespace Neomaster.Extra.UnitTests;
 public class StringExtensionsUnitTests
 {
   [Theory]
+  [InlineData("", true)]
+  [InlineData(" ", true)]
+  [InlineData("\t", true)]
+  [InlineData("a", false)]
+  [InlineData(null, false)]
+  public void IsWhiteSpace(string input, bool expected)
+  {
+    var actual = input.IsWhiteSpace();
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
+  [InlineData(null, true)]
+  [InlineData("", true)]
+  [InlineData(" ", false)]
+  [InlineData("a", false)]
+  public void IsNullOrEmpty(string input, bool expected)
+  {
+    var actual = input.IsNullOrEmpty();
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
+  [InlineData(null, true)]
+  [InlineData("", true)]
+  [InlineData(" ", true)]
+  [InlineData("\t", true)]
+  [InlineData("a", false)]
+  public void IsNullOrWhiteSpace(string input, bool expected)
+  {
+    var actual = input.IsNullOrWhiteSpace();
+    Assert.Equal(expected, actual);
+  }
+
+  [Theory]
   [InlineData("", "")]
   [InlineData("a", "a")]
   [InlineData("ab", "a")]

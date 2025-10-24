@@ -5,6 +5,21 @@ namespace Neomaster.Extra;
 
 public static class StringExtensions
 {
+  public static bool IsWhiteSpace(this string text)
+  {
+    return text?.All(char.IsWhiteSpace) == true;
+  }
+
+  public static bool IsNullOrEmpty(this string text)
+  {
+    return string.IsNullOrEmpty(text);
+  }
+
+  public static bool IsNullOrWhiteSpace(this string text)
+  {
+    return string.IsNullOrWhiteSpace(text);
+  }
+
   public static string Truncate(this string text, int length)
   {
     return text.Length > length ? text[..length] : text;
