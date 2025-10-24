@@ -49,4 +49,11 @@ public static class StringExtensions
   {
     return Convert.FromBase64String(base64).ConcatAsUtf8Chars();
   }
+
+  public static bool IsBase64(this string text)
+  {
+    return !text.IsNullOrWhiteSpace()
+      && text.Length % 4 == 0
+      && Convert.TryFromBase64String(text, new byte[text.Length], out var _);
+  }
 }
