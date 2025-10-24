@@ -1,13 +1,3 @@
-string.ToUrlSafeBase64():string
-```csharp
-"ÿÿы😊".ToBase64() // "w7/Dv9GL8J+Yig=="
-"ÿÿы😊".ToUrlSafeBase64() // "w7_Dv9GL8J-Yig"
-```
-
-string.FromUrlSafeBase64():string
-```csharp
-"w7_Dv9GL8J-Yig".FromUrlSafeBase64() // "ÿÿы😊"
-```
 
 Enum.GetDescription():string
 ```csharp
@@ -88,6 +78,11 @@ string.FromBase64():string
 "MQ==".FromBase64() // "1"
 ```
 
+string.FromUrlSafeBase64():string
+```csharp
+"w7_Dv9GL8J-Yig".FromUrlSafeBase64() // "ÿÿы😊"
+```
+
 string.IsBase64():bool
 ```csharp
 "1".IsBase64() // false
@@ -129,6 +124,12 @@ string.ToBytes():string
 ```csharp
 "".ToBytes() // []
 "A".ToBytes() // [65]
+```
+
+string.ToUrlSafeBase64():string
+```csharp
+"ÿÿы😊".ToBase64() // "w7/Dv9GL8J+Yig=="
+"ÿÿы😊".ToUrlSafeBase64() // "w7_Dv9GL8J-Yig"
 ```
 
 string.ToUtf8Bytes():string

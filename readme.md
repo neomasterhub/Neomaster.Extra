@@ -132,6 +132,16 @@ string.<b>FromBase64()</b> : string
 
 <details>
 <summary>
+string.<b>FromUrlSafeBase64()</b> : string
+</summary>
+
+```csharp
+"w7_Dv9GL8J-Yig".FromUrlSafeBase64() // "ÿÿы😊"
+```
+</details>
+
+<details>
+<summary>
 string.<b>IsBase64()</b> : bool
 </summary>
 
@@ -200,6 +210,17 @@ string.<b>ToBytes()</b> : string
 ```csharp
 "".ToBytes() // []
 "A".ToBytes() // [65]
+```
+</details>
+
+<details>
+<summary>
+string.<b>ToUrlSafeBase64()</b> : string
+</summary>
+
+```csharp
+"ÿÿы😊".ToBase64() // "w7/Dv9GL8J+Yig=="
+"ÿÿы😊".ToUrlSafeBase64() // "w7_Dv9GL8J-Yig"
 ```
 </details>
 
