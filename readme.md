@@ -1,10 +1,18 @@
-# 🧩EXTRA
+<div align="center">
 
+  [![License](https://img.shields.io/badge/🧾License-MIT-green?style=flat)](https://opensource.org/licenses/MIT)
+  [![Telegram Channel](https://img.shields.io/badge/Telegram-Neomaster-2CA5E0?style=flat&logo=telegram)](https://t.me/neomaster_dev)
+  [![.NET Version](https://img.shields.io/badge/.NET_Standard-2.1-blueviolet?style=flat&logo=dotnet)](#)  
+  [![NuGet](https://img.shields.io/nuget/v/Neomaster.Extra.svg?label=NuGet&logo=nuget&logoColor=white&labelColor=gray&color=blue)](https://www.nuget.org/packages/Neomaster.Extra)
+
+</div>
+
+# ⚙️EXTRA
 ## Extensions
+### Enum
+
 <details>
-<summary>
-Enum.<b>GetDescription()</b> : string
-</summary>
+<summary><code>string <b>GetDescription</b>()</code></summary>
 
 ```csharp
 enum MyEnum
@@ -19,10 +27,10 @@ MyEnum.E2.GetDescription() // "E2"
 ```
 </details>
 
+### IEnumerable&lt;byte&gt;
+
 <details>
-<summary>
-IEnumerable&lt;byte&gt;.<b>ConcatAsChars()</b> : string
-</summary>
+<summary><code>string <b>ConcatAsChars</b>()</code></summary>
 
 ```csharp
 [].ConcatAsChars() // ""
@@ -31,9 +39,7 @@ IEnumerable&lt;byte&gt;.<b>ConcatAsChars()</b> : string
 </details>
 
 <details>
-<summary>
-IEnumerable&lt;byte&gt;.<b>ConcatAsUtf8Chars()</b> : string
-</summary>
+<summary><code>string <b>ConcatAsUtf8Chars</b>()</code></summary>
 
 ```csharp
 [].ConcatAsUtf8Chars() // ""
@@ -41,10 +47,10 @@ IEnumerable&lt;byte&gt;.<b>ConcatAsUtf8Chars()</b> : string
 ```
 </details>
 
+### IEnumerable&lt;TItem&gt;
+
 <details>
-<summary>
-IEnumerable&lt;TItem&gt;.<b>ConcatToString&lt;TItem&gt;()</b> : string
-</summary>
+<summary><code>string <b>ConcatToString&lt;TItem&gt;</b>()</code></summary>
 
 ```csharp
 [].ConcatToString() // ""
@@ -54,9 +60,7 @@ IEnumerable&lt;TItem&gt;.<b>ConcatToString&lt;TItem&gt;()</b> : string
 </details>
 
 <details>
-<summary>
-IEnumerable&lt;TItem&gt;.<b>IsNullOrEmpty&lt;TItem&gt;()</b> : bool
-</summary>
+<summary><code>bool <b>IsNullOrEmpty&lt;TItem&gt;</b>()</code></summary>
 
 ```csharp
 (null as byte[]).IsNullOrEmpty() // true
@@ -66,9 +70,7 @@ IEnumerable&lt;TItem&gt;.<b>IsNullOrEmpty&lt;TItem&gt;()</b> : bool
 </details>
 
 <details>
-<summary>
-IEnumerable&lt;TItem&gt;.<b>JoinToString&lt;TItem&gt;(char separator)</b> : string
-</summary>
+<summary><code>string <b>JoinToString&lt;TItem&gt;</b>(char separator)</code></summary>
 
 ```csharp
 [].JoinToString('.') // ""
@@ -78,9 +80,7 @@ IEnumerable&lt;TItem&gt;.<b>JoinToString&lt;TItem&gt;(char separator)</b> : stri
 </details>
 
 <details>
-<summary>
-IEnumerable&lt;TItem&gt;.<b>JoinToString&lt;TItem&gt;(string separator)</b> : string
-</summary>
+<summary><code>string <b>JoinToString&lt;TItem&gt;</b>(string separator)</code></summary>
 
 ```csharp
 [].JoinToString("..") // ""
@@ -90,9 +90,7 @@ IEnumerable&lt;TItem&gt;.<b>JoinToString&lt;TItem&gt;(string separator)</b> : st
 </details>
 
 <details>
-<summary>
-IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List&lt;TItem&gt;&gt;
-</summary>
+<summary><code>IEnumerable&lt;List&lt;TItem&gt;&gt; <b>SplitBySize&lt;TItem&gt;</b>()</code></summary>
 
 ```csharp
 [].SplitBySize(-1) // ArgumentOutOfRangeException
@@ -104,10 +102,10 @@ IEnumerable&lt;TItem&gt;.<b>SplitBySize&lt;TItem&gt;()</b> : IEnumerable&lt;List
 ```
 </details>
 
+### string
+
 <details>
-<summary>
-string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
-</summary>
+<summary><code>string <b>DeserializeAsJson&lt;TObj&gt;</b>(JsonSerializerOptions options = null)</code></summary>
 
 ```csharp
 """
@@ -121,9 +119,7 @@ string.<b>DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b
 </details>
 
 <details>
-<summary>
-string.<b>FromBase64()</b> : string
-</summary>
+<summary><code>string <b>FromBase64</b>()</code></summary>
 
 ```csharp
 "MQ==".FromBase64() // "1"
@@ -131,9 +127,7 @@ string.<b>FromBase64()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>FromUrlSafeBase64()</b> : string
-</summary>
+<summary><code>string <b>FromUrlSafeBase64</b>()</code></summary>
 
 ```csharp
 "w7_Dv9GL8J-Yig".FromUrlSafeBase64() // "ÿÿы😊"
@@ -141,9 +135,7 @@ string.<b>FromUrlSafeBase64()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>IsBase64()</b> : bool
-</summary>
+<summary><code>bool <b>IsBase64</b>()</code></summary>
 
 ```csharp
 "1".IsBase64() // false
@@ -152,9 +144,7 @@ string.<b>IsBase64()</b> : bool
 </details>
 
 <details>
-<summary>
-string.<b>IsNullOrEmpty()</b> : bool
-</summary>
+<summary><code>bool <b>IsNullOrEmpty</b>()</code></summary>
 
 ```csharp
 (null as string).IsNullOrEmpty() // true
@@ -165,9 +155,7 @@ string.<b>IsNullOrEmpty()</b> : bool
 </details>
 
 <details>
-<summary>
-string.<b>IsNullOrWhiteSpace()</b> : bool
-</summary>
+<summary><code>bool <b>IsNullOrWhiteSpace</b>()</code></summary>
 
 ```csharp
 (null as string).IsNullOrWhiteSpace() // true
@@ -179,9 +167,7 @@ string.<b>IsNullOrWhiteSpace()</b> : bool
 </details>
 
 <details>
-<summary>
-string.<b>IsWhiteSpace()</b> : bool
-</summary>
+<summary><code>bool <b>IsWhiteSpace</b>()</code></summary>
 
 ```csharp
 "".IsWhiteSpace() // true
@@ -193,9 +179,7 @@ string.<b>IsWhiteSpace()</b> : bool
 </details>
 
 <details>
-<summary>
-string.<b>RemoveByRegex()</b> : string
-</summary>
+<summary><code>string <b>RemoveByRegex</b>()</code></summary>
 
 ```csharp
 "x1y".RemoveByRegex(@"\d") // "xy"
@@ -203,9 +187,7 @@ string.<b>RemoveByRegex()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ReplaceByRegex()</b> : string
-</summary>
+<summary><code>string <b>ReplaceByRegex</b>()</code></summary>
 
 ```csharp
 "x1y".ReplaceByRegex(@"\d", "2") // "x2y"
@@ -213,9 +195,7 @@ string.<b>ReplaceByRegex()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ReverseBytes()</b> : string
-</summary>
+<summary><code>string <b>ReverseBytes</b>()</code></summary>
 
 ```csharp
 "Вася".ReverseBytes() // "ясаВ"
@@ -224,9 +204,7 @@ string.<b>ReverseBytes()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ReverseGraphemes()</b> : string
-</summary>
+<summary><code>string <b>ReverseGraphemes</b>()</code></summary>
 
 ```csharp
 "Вася".ReverseBytes() // "ясаВ"
@@ -235,9 +213,7 @@ string.<b>ReverseGraphemes()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ToBase64()</b> : string
-</summary>
+<summary><code>string <b>ToBase64</b>()</code></summary>
 
 ```csharp
 "1".ToBase64() // "MQ=="
@@ -245,9 +221,7 @@ string.<b>ToBase64()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ToBytes()</b> : string
-</summary>
+<summary><code>string <b>ToBytes</b>()</code></summary>
 
 ```csharp
 "".ToBytes() // []
@@ -256,9 +230,7 @@ string.<b>ToBytes()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ToUrlSafeBase64()</b> : string
-</summary>
+<summary><code>string <b>ToUrlSafeBase64</b>()</code></summary>
 
 ```csharp
 "ÿÿы😊".ToBase64() // "w7/Dv9GL8J+Yig=="
@@ -267,9 +239,7 @@ string.<b>ToUrlSafeBase64()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>ToUtf8Bytes()</b> : string
-</summary>
+<summary><code>string <b>ToUtf8Bytes</b>()</code></summary>
 
 ```csharp
 "".ToUtf8Bytes() // []
@@ -278,9 +248,7 @@ string.<b>ToUtf8Bytes()</b> : string
 </details>
 
 <details>
-<summary>
-string.<b>Truncate(int length)</b> : string
-</summary>
+<summary><code>string <b>Truncate</b>(int length)</code></summary>
 
 ```csharp
 "".Truncate(1) // ""
@@ -289,10 +257,10 @@ string.<b>Truncate(int length)</b> : string
 ```
 </details>
 
+### TObj
+
 <details>
-<summary>
-TObj.<b>ToJson&lt;TObj&gt;(JsonSerializerOptions options = null)</b> : string
-</summary>
+<summary><code>string <b>ToJson&lt;TObj&gt;</b>(JsonSerializerOptions options = null)</code></summary>
 
 ```csharp
 new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
@@ -300,9 +268,7 @@ new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
 </details>
 
 <details>
-<summary>
-TObj.<b>ToJsonPretty&lt;TObj&gt;()</b> : string
-</summary>
+<summary><code>string <b>ToJsonPretty&lt;TObj&gt;</b>()</code></summary>
 
 ```csharp
 new { A = ConsoleColor.Red }.ToJsonPretty()
