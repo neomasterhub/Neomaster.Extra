@@ -12,7 +12,7 @@ var demosExtensionsPath = Path.Combine(solDir, "demos.extensions.md");
 var demosExtensionsSB = new StringBuilder();
 var readmeExtensionsSB = new StringBuilder();
 
-foreach (var x in File
+var demosExtensions = File
   .ReadAllText(demosExtensionsPath)
   .Split(codeCket + Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
   .Select(x =>
@@ -24,8 +24,30 @@ foreach (var x in File
       Header = pair[0].Trim(),
       Code = pair[1].Trim(),
     };
+  });
+
+var groupedDemosExtensions = demosExtensions
+  .Select(x =>
+  {
+    var headerParts = x.Header.Split(':', StringSplitOptions.TrimEntries);
+    var typeMethod = headerParts[0].Split('.', 2);
+
+    return new
+    {
+      Type = typeMethod[0],
+      ReturnType = headerParts[1],
+      Method = typeMethod[1],
+      x.Code,
+    };
   })
-  .OrderBy(x => x.Header))
+  .OrderBy(x => x.Type)
+  .GroupBy(x => x.Type, (k, v) => new
+  {
+    Type = k,
+    Demos = v.OrderBy(x => x.Method),
+  });
+
+foreach (var x in demosExtensions.OrderBy(x => x.Header))
 {
   demosExtensionsSB
     .AppendLine()
@@ -33,21 +55,26 @@ foreach (var x in File
     .AppendLine(codeBra)
     .AppendLine(x.Code)
     .AppendLine(codeCket);
+}
 
-  readmeExtensionsSB
-    .AppendLine()
-    .AppendLine("<details>")
-    .AppendLine("<summary>")
-    .AppendLine(x.Header
-      .Trim()
-      .Replace(".", $".{boldBra}")
-      .Replace(":", $"{boldCket} : "))
-    .AppendLine("</summary>")
-    .AppendLine()
-    .AppendLine(codeBra)
-    .AppendLine(x.Code)
-    .AppendLine(codeCket)
-    .AppendLine("</details>");
+foreach (var group in groupedDemosExtensions)
+{
+  readmeExtensionsSB.AppendLine($"\n### {group.Type}");
+
+  foreach (var x in group.Demos)
+  {
+    readmeExtensionsSB
+      .AppendLine()
+      .AppendLine("<details>")
+      .Append("<summary><code>")
+      .Append($"{x.ReturnType} {boldBra}{x.Method}".Replace("(", $"{boldCket}("))
+      .AppendLine("</code></summary>")
+      .AppendLine()
+      .AppendLine(codeBra)
+      .AppendLine(x.Code)
+      .AppendLine(codeCket)
+      .AppendLine("</details>");
+  }
 }
 
 var readmeText = readmeTemplateText
