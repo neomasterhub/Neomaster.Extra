@@ -31,10 +31,16 @@ var groupedDemosExtensions = demosExtensions
   {
     var headerParts = x.Header.Split(':', StringSplitOptions.TrimEntries);
     var typeMethod = headerParts[0].Split('.', 2);
+    var type = typeMethod[0];
+
+    if (type == "TObj")
+    {
+      type = "object";
+    }
 
     return new
     {
-      Type = typeMethod[0],
+      Type = type,
       ReturnType = headerParts[1],
       Method = typeMethod[1],
       x.Code,

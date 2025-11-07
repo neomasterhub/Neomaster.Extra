@@ -102,6 +102,27 @@ MyEnum.E2.GetDescription() // "E2"
 ```
 </details>
 
+### object
+
+<details>
+<summary><code>string <b>ToJson&lt;TObj&gt;</b>(JsonSerializerOptions options = null)</code></summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
+```
+</details>
+
+<details>
+<summary><code>string <b>ToJsonPretty&lt;TObj&gt;</b>()</code></summary>
+
+```csharp
+new { A = ConsoleColor.Red }.ToJsonPretty()
+// {
+//   "a":"red"
+// }
+```
+</details>
+
 ### string
 
 <details>
@@ -254,26 +275,5 @@ MyEnum.E2.GetDescription() // "E2"
 "".Truncate(1) // ""
 "a".Truncate(1) // "a"
 "ab".Truncate(1) // "a"
-```
-</details>
-
-### TObj
-
-<details>
-<summary><code>string <b>ToJson&lt;TObj&gt;</b>(JsonSerializerOptions options = null)</code></summary>
-
-```csharp
-new { A = ConsoleColor.Red }.ToJson() // {"a":"red"}
-```
-</details>
-
-<details>
-<summary><code>string <b>ToJsonPretty&lt;TObj&gt;</b>()</code></summary>
-
-```csharp
-new { A = ConsoleColor.Red }.ToJsonPretty()
-// {
-//   "a":"red"
-// }
 ```
 </details>
