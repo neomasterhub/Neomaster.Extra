@@ -178,4 +178,22 @@ public class StringExtensionsUnitTests
     var actual = "x1y".RemoveByRegex(@"\d");
     Assert.Equal("xy", actual);
   }
+
+  [Theory]
+  [InlineData("Вася", "ясаВ", true)]
+  [InlineData("🏠🌧❤️", "❤️🌧🏠", false)]
+  public void ReverseBytes(string input, string visuallyReversed, bool expectedIsVisuallyReversed)
+  {
+    var actual = input.ReverseBytes();
+    Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
+  }
+
+  [Theory]
+  [InlineData("Вася", "ясаВ", true)]
+  [InlineData("🏠🌧❤️", "❤️🌧🏠", true)]
+  public void ReverseGraphemes(string input, string visuallyReversed, bool expectedIsVisuallyReversed)
+  {
+    var actual = input.ReverseGraphemes();
+    Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
+  }
 }

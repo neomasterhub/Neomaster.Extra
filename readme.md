@@ -214,6 +214,28 @@ string.<b>ReplaceByRegex()</b> : string
 
 <details>
 <summary>
+string.<b>ReverseBytes()</b> : string
+</summary>
+
+```csharp
+"Вася".ReverseBytes() // "ясаВ"
+"🏠🌧❤️".ReverseBytes() // "️❤\udf27🏠\ud83c"
+```
+</details>
+
+<details>
+<summary>
+string.<b>ReverseGraphemes()</b> : string
+</summary>
+
+```csharp
+"Вася".ReverseBytes() // "ясаВ"
+"🏠🌧❤️".ReverseBytes() // "️❤️🌧🏠"
+```
+</details>
+
+<details>
+<summary>
 string.<b>ToBase64()</b> : string
 </summary>
 

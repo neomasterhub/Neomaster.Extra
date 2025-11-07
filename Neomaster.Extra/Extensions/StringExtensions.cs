@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -91,5 +92,28 @@ public static class StringExtensions
     RegexOptions options = RegexOptions.None)
   {
     return Regex.Replace(text, pattern, string.Empty, options);
+  }
+
+  public static string ReverseBytes(this string text)
+  {
+    var chars = text.ToCharArray();
+    Array.Reverse(chars);
+
+    return new string(chars);
+  }
+
+  public static string ReverseGraphemes(this string text)
+  {
+    var enumerator = StringInfo.GetTextElementEnumerator(text);
+    var graphemes = new List<string>();
+
+    while (enumerator.MoveNext())
+    {
+      graphemes.Add(enumerator.GetTextElement());
+    }
+
+    graphemes.Reverse();
+
+    return string.Concat(graphemes);
   }
 }
