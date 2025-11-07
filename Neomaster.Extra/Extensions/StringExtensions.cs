@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -99,5 +100,20 @@ public static class StringExtensions
     Array.Reverse(chars);
 
     return new string(chars);
+  }
+
+  public static string ReverseGraphemes(this string text)
+  {
+    var enumerator = StringInfo.GetTextElementEnumerator(text);
+    var graphemes = new List<string>();
+
+    while (enumerator.MoveNext())
+    {
+      graphemes.Add(enumerator.GetTextElement());
+    }
+
+    graphemes.Reverse();
+
+    return string.Concat(graphemes);
   }
 }
