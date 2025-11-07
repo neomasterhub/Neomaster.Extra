@@ -125,6 +125,18 @@ string.ReplaceByRegex():string
 "x1y".ReplaceByRegex(@"\d", "2") // "x2y"
 ```
 
+string.ReverseBytes():string
+```csharp
+"Вася".ReverseBytes() // "ясаВ"
+"🏠🌧❤️".ReverseBytes() // "️❤\udf27🏠\ud83c"
+```
+
+string.ReverseGraphemes():string
+```csharp
+"Вася".ReverseBytes() // "ясаВ"
+"🏠🌧❤️".ReverseBytes() // "️❤️🌧🏠"
+```
+
 string.ToBase64():string
 ```csharp
 "1".ToBase64() // "MQ=="
