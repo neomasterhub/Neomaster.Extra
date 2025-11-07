@@ -187,4 +187,13 @@ public class StringExtensionsUnitTests
     var actual = input.ReverseBytes();
     Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
   }
+
+  [Theory]
+  [InlineData("Вася", "ясаВ", true)]
+  [InlineData("🏠🌧❤️", "❤️🌧🏠", true)]
+  public void ReverseGraphemes(string input, string visuallyReversed, bool expectedIsVisuallyReversed)
+  {
+    var actual = input.ReverseGraphemes();
+    Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
+  }
 }
