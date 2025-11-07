@@ -92,4 +92,12 @@ public static class StringExtensions
   {
     return Regex.Replace(text, pattern, string.Empty, options);
   }
+
+  public static string ReverseBytes(this string text)
+  {
+    var chars = text.ToCharArray();
+    Array.Reverse(chars);
+
+    return new string(chars);
+  }
 }
