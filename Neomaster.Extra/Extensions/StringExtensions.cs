@@ -133,4 +133,27 @@ public static class StringExtensions
 
     return char.ToLower(text[0], ci) + text[1..];
   }
+
+  public static string PascalToSnakeCase(this string text, CultureInfo ci = null)
+  {
+    if (text == null)
+    {
+      throw new ArgumentNullException(nameof(text));
+    }
+
+    ci ??= CultureInfo.InvariantCulture;
+    var snake = new StringBuilder();
+
+    foreach (var c in text)
+    {
+      if (char.IsUpper(c) && snake.Length > 0)
+      {
+        snake.Append('_');
+      }
+
+      snake.Append(char.ToLower(c, ci));
+    }
+
+    return snake.ToString();
+  }
 }
