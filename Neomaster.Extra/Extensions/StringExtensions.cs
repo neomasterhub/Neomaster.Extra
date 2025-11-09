@@ -117,43 +117,8 @@ public static class StringExtensions
     return string.Concat(graphemes);
   }
 
-  public static string PascalToCamelCase(this string text, CultureInfo ci = null)
+  public static string ConvertCase(this string text, JsonNamingPolicy policy)
   {
-    if (text == null)
-    {
-      throw new ArgumentNullException(nameof(text));
-    }
-
-    if (text.IsWhiteSpace() || char.IsLower(text[0]))
-    {
-      return text;
-    }
-
-    ci ??= CultureInfo.InvariantCulture;
-
-    return char.ToLower(text[0], ci) + text[1..];
-  }
-
-  public static string PascalToSnakeCase(this string text, CultureInfo ci = null)
-  {
-    if (text == null)
-    {
-      throw new ArgumentNullException(nameof(text));
-    }
-
-    ci ??= CultureInfo.InvariantCulture;
-    var snake = new StringBuilder();
-
-    foreach (var c in text)
-    {
-      if (char.IsUpper(c) && snake.Length > 0)
-      {
-        snake.Append('_');
-      }
-
-      snake.Append(char.ToLower(c, ci));
-    }
-
-    return snake.ToString();
+    return policy.ConvertName(text);
   }
 }
