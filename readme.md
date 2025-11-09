@@ -126,6 +126,14 @@ new { A = ConsoleColor.Red }.ToJsonPretty()
 ### string
 
 <details>
+<summary><code>string <b>ConvertCase</b>(JsonNamingPolicy policy)</code></summary>
+
+```csharp
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // red-box
+```
+</details>
+
+<details>
 <summary><code>string <b>DeserializeAsJson&lt;TObj&gt;</b>(JsonSerializerOptions options = null)</code></summary>
 
 ```csharp
