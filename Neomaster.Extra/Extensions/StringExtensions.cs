@@ -116,4 +116,16 @@ public static class StringExtensions
 
     return string.Concat(graphemes);
   }
+
+  public static string PascalToCamelCase(this string text, CultureInfo ci = null)
+  {
+    if (text.IsWhiteSpace() || char.IsLower(text[0]))
+    {
+      return text;
+    }
+
+    ci ??= CultureInfo.InvariantCulture;
+
+    return char.ToLower(text[0], ci) + text[1..];
+  }
 }
