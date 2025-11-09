@@ -116,4 +116,9 @@ public static class StringExtensions
 
     return string.Concat(graphemes);
   }
+
+  public static string ConvertCase(this string text, JsonNamingPolicy policy)
+  {
+    return policy.ConvertName(text);
+  }
 }

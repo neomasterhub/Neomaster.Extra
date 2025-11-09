@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 
 namespace Neomaster.Extra.UnitTests;
 
@@ -195,5 +196,17 @@ public class StringExtensionsUnitTests
   {
     var actual = input.ReverseGraphemes();
     Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
+  }
+
+  [Fact]
+  public void ConvertCase()
+  {
+    const string input = "RedBox";
+    const string expected = "red-box";
+
+    var actual = input.ConvertCase(JsonNamingPolicy.KebabCaseLower);
+
+    Assert.NotEqual(input, actual);
+    Assert.Equal(expected, actual);
   }
 }

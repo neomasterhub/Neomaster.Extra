@@ -62,6 +62,11 @@ IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;():IEnumerable&lt;List&lt;TItem
 [1, 2, 3].SplitBySize(2) // [[1, 2], [3]]
 ```
 
+string.ConvertCase(JsonNamingPolicy policy):string
+```csharp
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // red-box
+```
+
 string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
 ```csharp
 """
