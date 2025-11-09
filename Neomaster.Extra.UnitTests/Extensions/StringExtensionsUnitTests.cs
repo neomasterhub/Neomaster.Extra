@@ -220,6 +220,7 @@ public class StringExtensionsUnitTests
 
     var actual = input.PascalToCamelCase(new CultureInfo("tr-TR"));
 
+    Assert.NotEqual(input, actual);
     Assert.Equal(expected, actual);
   }
 }

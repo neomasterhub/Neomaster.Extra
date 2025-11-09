@@ -119,6 +119,11 @@ public static class StringExtensions
 
   public static string PascalToCamelCase(this string text, CultureInfo ci = null)
   {
+    if (text == null)
+    {
+      throw new ArgumentNullException(nameof(text));
+    }
+
     if (text.IsWhiteSpace() || char.IsLower(text[0]))
     {
       return text;
