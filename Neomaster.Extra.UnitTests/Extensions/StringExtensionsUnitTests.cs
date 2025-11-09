@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -195,5 +196,30 @@ public class StringExtensionsUnitTests
   {
     var actual = input.ReverseGraphemes();
     Assert.Equal(expectedIsVisuallyReversed, actual == visuallyReversed);
+  }
+
+  [Theory]
+  [InlineData("", "")]
+  [InlineData(" ", " ")]
+  [InlineData("a", "a")]
+  [InlineData("A", "a")]
+  [InlineData("aB", "aB")]
+  [InlineData("AB", "aB")]
+  [InlineData("İstanbul", "İstanbul")]
+  public void PascalToCamelCase_InvariantCulture(string input, string expected)
+  {
+    var actual = input.PascalToCamelCase();
+    Assert.Equal(expected, actual);
+  }
+
+  [Fact]
+  public void PascalToCamelCase_SpecificCulture()
+  {
+    const string input = "İstanbul";
+    const string expected = "istanbul";
+
+    var actual = input.PascalToCamelCase(new CultureInfo("tr-TR"));
+
+    Assert.Equal(expected, actual);
   }
 }
