@@ -52,7 +52,7 @@ IEnumerable&lt;TItem&gt;.JoinToString&lt;TItem&gt;(string separator):string
 ['1', '2'].JoinToString("..") // "1..2"
 ```
 
-IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;():IEnumerable&lt;List&lt;TItem&gt;&gt;
+IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;(int size):IEnumerable&lt;List&lt;TItem&gt;&gt;
 ```csharp
 [].SplitBySize(-1) // ArgumentOutOfRangeException
 [].SplitBySize(0) // ArgumentOutOfRangeException

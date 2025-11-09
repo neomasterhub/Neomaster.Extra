@@ -90,7 +90,7 @@ MyEnum.E2.GetDescription() // "E2"
 </details>
 
 <details>
-<summary><code>IEnumerable&lt;List&lt;TItem&gt;&gt; <b>SplitBySize&lt;TItem&gt;</b>()</code></summary>
+<summary><code>IEnumerable&lt;List&lt;TItem&gt;&gt; <b>SplitBySize&lt;TItem&gt;</b>(int size)</code></summary>
 
 ```csharp
 [].SplitBySize(-1) // ArgumentOutOfRangeException
