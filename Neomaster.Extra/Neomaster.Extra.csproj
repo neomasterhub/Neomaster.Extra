@@ -9,7 +9,7 @@
     <NoWarn>$(NoWarn);IDE0079</NoWarn>
     <PackageId>Neomaster.Extra</PackageId>
     <PackageIcon>neomaster64.png</PackageIcon>
-    <Version>2.1.12</Version>
+    <Version>v2.1.10</Version>
     <Authors>Neomaster</Authors>
     <Company>Neomaster</Company>
     <Copyright>Copyright © 2025 Neomaster</Copyright>
