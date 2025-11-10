@@ -202,11 +202,11 @@ public class StringExtensionsUnitTests
   public void ConvertCase()
   {
     const string input = "RedBox";
-    const string expected = "red-box";
 
-    var actual = input.ConvertCase(JsonNamingPolicy.KebabCaseLower);
-
-    Assert.NotEqual(input, actual);
-    Assert.Equal(expected, actual);
+    Assert.Equal("redBox", input.ConvertCase(JsonNamingPolicy.CamelCase));
+    Assert.Equal("red-box", input.ConvertCase(JsonNamingPolicy.KebabCaseLower));
+    Assert.Equal("RED-BOX", input.ConvertCase(JsonNamingPolicy.KebabCaseUpper));
+    Assert.Equal("red_box", input.ConvertCase(JsonNamingPolicy.SnakeCaseLower));
+    Assert.Equal("RED_BOX", input.ConvertCase(JsonNamingPolicy.SnakeCaseUpper));
   }
 }

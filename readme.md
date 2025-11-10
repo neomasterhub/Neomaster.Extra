@@ -129,7 +129,11 @@ new { A = ConsoleColor.Red }.ToJsonPretty()
 <summary><code>string <b>ConvertCase</b>(JsonNamingPolicy policy)</code></summary>
 
 ```csharp
-"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // red-box
+"RedBox".ConvertCase(JsonNamingPolicy.CamelCase) // "redBox"
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // "red-box"
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseUpper) // "RED-BOX"
+"RedBox".ConvertCase(JsonNamingPolicy.SnakeCaseLower) // "red_box"
+"RedBox".ConvertCase(JsonNamingPolicy.SnakeCaseUpper) // "RED_BOX"
 ```
 </details>
 

@@ -64,7 +64,11 @@ IEnumerable&lt;TItem&gt;.SplitBySize&lt;TItem&gt;(int size):IEnumerable&lt;List&
 
 string.ConvertCase(JsonNamingPolicy policy):string
 ```csharp
-"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // red-box
+"RedBox".ConvertCase(JsonNamingPolicy.CamelCase) // "redBox"
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseLower) // "red-box"
+"RedBox".ConvertCase(JsonNamingPolicy.KebabCaseUpper) // "RED-BOX"
+"RedBox".ConvertCase(JsonNamingPolicy.SnakeCaseLower) // "red_box"
+"RedBox".ConvertCase(JsonNamingPolicy.SnakeCaseUpper) // "RED_BOX"
 ```
 
 string.DeserializeAsJson&lt;TObj&gt;(JsonSerializerOptions options = null):string
