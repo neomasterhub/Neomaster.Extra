@@ -8,6 +8,10 @@
 </div>
 
 # ⚙️EXTRA
+
+## TL;DR
+A collection of handy utilities to simplify working with basic types.
+
 ## Extensions
 ### Enum
 
