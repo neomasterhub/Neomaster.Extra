@@ -12,10 +12,16 @@
     <Version>2.1.11</Version>
     <Authors>Neomaster</Authors>
     <Company>Neomaster</Company>
-    <Copyright>Copyright © 2025 Neomaster</Copyright>
+    <Copyright>Copyright © 2026 Neomaster</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/neomasterhub/Neomaster.Extra</RepositoryUrl>
+    <Description>A collection of handy utilities to simplify working with basic types.</Description>
+    <PackageTags>
+      extension-methods;
+      csharp;dotnet;
+      neomaster
+    </PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
