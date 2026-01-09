@@ -22,11 +22,9 @@ public static class EnumExtensions
       var dict = new Dictionary<Enum, string>();
       foreach (var key in Enum.GetValues(t))
       {
-        var value = t.GetField(key.ToString())?
+        dict[(Enum)key] = t.GetField(key.ToString())?
           .GetCustomAttribute<DescriptionAttribute>()?.Description
           ?? key.ToString();
-
-        dict[(Enum)key] = value;
       }
 
       return dict;
